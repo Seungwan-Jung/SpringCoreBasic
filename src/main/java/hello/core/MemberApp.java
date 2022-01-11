@@ -8,7 +8,8 @@ import hello.core.member.MemberServiceImple;
 public class MemberApp {
 
     public static void main(String[] args) { //psvm
-        MemberService memberService = new MemberServiceImple();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP); //long이라 1L, 1넣으면 컴파일오류
         memberService.join(member);
 
